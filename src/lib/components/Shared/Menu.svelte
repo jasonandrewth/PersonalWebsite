@@ -1,0 +1,60 @@
+<script lang="ts">
+	export let menuOpen: boolean;
+
+	export let menuHandler: (e: Event) => void;
+</script>
+
+<div
+	class="mobilemenu {menuOpen
+		? 'open'
+		: 'closed'} md:hidden bg-gray-400 fixed top-0 left-0 w-full h-screen z-10 flex items-center justify-center"
+>
+	<div class="container flex flex-row items-stretch gap-24">
+		<div class="ml-12 flex flex-col items-center w-full">
+			<a
+				on:click={menuHandler}
+				class="font-title font-bold text-3xl md:text-6xl leading-loose md:leading-relaxed md:transform md:-translate-x-16"
+				href="/"
+				style="opacity: 1;">Home</a
+			><a
+				on:click={menuHandler}
+				class="font-title font-bold text-3xl md:text-6xl leading-loose md:leading-relaxed md:transform md:translate-x-16"
+				href="/blog"
+				style="opacity: 1;">Blog</a
+			><a
+				on:click={menuHandler}
+				class="font-title font-bold text-3xl md:text-6xl leading-loose md:leading-relaxed md:transform md:-translate-x-16"
+				href="/about"
+				style="opacity: 1;">About</a
+			><a
+				on:click={menuHandler}
+				class="font-title font-bold text-3xl md:text-6xl leading-loose md:leading-relaxed md:transform md:translate-x-16"
+				href="/contact"
+				style="opacity: 1;">Contact</a
+			>
+		</div>
+	</div>
+</div>
+
+<style lang="scss">
+	.mobilemenu {
+		transition: all 0.25s linear;
+	}
+
+	.open {
+		left: 0;
+	}
+
+	.closed {
+		left: -100%;
+	}
+
+	.container {
+		width: 100%;
+		max-width: 1200px;
+		padding-left: 32px;
+		padding-right: 32px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+</style>
