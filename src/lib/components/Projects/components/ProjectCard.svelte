@@ -21,7 +21,7 @@
 						height={100}
 					/>
 				</div>
-				<section class="lg:px-8 lg:py-4 lg:flex flex-col h-full justify-between">
+				<section class="lg:px-8 lg:py-4 lg:flex flex-col justify-between">
 					<div>
 						<h2 class="item__title mb-2 text-4xl uppercase">{title || 'PROJECT'}</h2>
 						<p class="text-xl mb-4">
