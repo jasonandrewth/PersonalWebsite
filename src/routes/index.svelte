@@ -12,7 +12,7 @@
 
 <Intro {text} />
 <ProjectGrid>
-	<ProjectCard />
-	<ProjectCard />
-	<ProjectCard />
+	<ProjectCard title="17Lps" />
+	<ProjectCard title="Kiss Me I'm Famous" />
+	<ProjectCard title="World Ataraxia" />
 </ProjectGrid>

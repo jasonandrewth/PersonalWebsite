@@ -1,4 +1,6 @@
 <script lang="ts">
+	import Canvas from '../Canvas/Canvas.svelte';
+
 	export let menuOpen: boolean;
 
 	export let menuHandler: (e: Event) => void;
@@ -9,7 +11,9 @@
 		? 'open'
 		: 'closed'} md:hidden bg-gray-400 fixed top-0 left-0 w-full h-screen z-10 flex items-center justify-center"
 >
-	<div class="container flex flex-row items-stretch gap-24">
+	<!-- <Canvas /> -->
+	<div class="overlay bg-gray-400 absolute w-full h-full opacity-90" />
+	<div class="container flex flex-row items-stretch gap-24 z-20">
 		<div class="ml-12 flex flex-col items-center w-full">
 			<a
 				on:click={menuHandler}

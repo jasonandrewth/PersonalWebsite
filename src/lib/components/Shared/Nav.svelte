@@ -8,7 +8,7 @@
 	<div
 		class="w-12 md:w-14 m-0 py-7 text-center float-left h-full border-r-2 flex flex-col items-center justify-between"
 	>
-		<div class="writing-mode-vertical tracking-wide">
+		<div class="writing-mode-vertical rotate-180 tracking-wide">
 			<a href={'/'}>
 				<h3>Jason Thompson</h3>
 			</a>
@@ -16,7 +16,7 @@
 
 		<div
 			on:click={menuHandler}
-			class="md:hidden p-4 writing-mode-vertical tracking-wide cursor-pointer"
+			class="md:hidden p-4 writing-mode-vertical rotate-180 tracking-wide cursor-pointer"
 		>
 			<h3>Menu</h3>
 		</div>
