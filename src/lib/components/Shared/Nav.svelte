@@ -38,23 +38,23 @@
 		<nav class="absolute bottom-0 pb-4 flex items-center">
 			<ul class="list-none">
 				<li
-					class="writing-mode-vertical rotate-180 py-2 max-w-[24px] text-center max-height-[110px] whitespace-nowrap"
+					class="transition-all writing-mode-vertical rotate-180 py-2 max-w-[24px] text-center max-height-[110px] whitespace-nowrap hover:text-red-600"
 				>
 					<a href={`/`}>
 						<h3>HOME</h3>
 					</a>
 				</li>
 				<li
-					class="writing-mode-vertical rotate-180 py-2 max-w-[24px] text-center max-height-[110px] whitespace-nowrap"
+					class="transition-all writing-mode-vertical rotate-180 py-2 max-w-[24px] text-center max-height-[110px] whitespace-nowrap hover:text-red-600"
 				>
 					<a href="/blog">
 						<h3>BLOG</h3>
 					</a>
 				</li>
 				<li
-					class="writing-mode-vertical rotate-180 py-2 max-w-(24px) text-center max-height-(110px) whitespace-nowrap"
+					class="transition-all writing-mode-vertical rotate-180 py-2 max-w-(24px) text-center max-height-(110px) whitespace-nowrap hover:text-red-600"
 				>
-					<a href="/about">
+					<a href="/contact">
 						<h3>CONTACT</h3>
 					</a>
 				</li>

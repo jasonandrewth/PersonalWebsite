@@ -9,11 +9,17 @@ published: true
   import ExternalLink from '$lib/components/ExternalLink.svelte'
 </script>
 
-# Uses
+## Uses
 
 **Here's some stuff I use**
 
+Last year, GitHub added a new cool feature for the user profile. You can now add a README file to it, and it will show up besides your profile pic. This is great for talking a bit about yourself and what you do, putting some contact info, or simply making a cool first impression. \
+
+
 Last year, GitHub added a new cool feature for the user profile. You can now add a README file to it, and it will show up besides your profile pic. This is great for talking a bit about yourself and what you do, putting some contact info, or simply making a cool first impression.
+
+Last year, GitHub added a new cool feature for the user profile. You can now add a README file to it, and it will show up besides your profile pic. This is great for talking a bit about yourself and what you do, putting some contact info, or simply making a cool first impression.
+
 
 <ExternalLink ariaLabel="googlelink" href="https://google.com">Google Link</ExternalLink>
 

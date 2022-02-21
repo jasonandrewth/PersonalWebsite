@@ -20,7 +20,7 @@
 
 <ul>
 	{#each posts as post}
-		<li>
+		<li class="first:border-none mb-8 py-4 border-t border-white border-opacity-50">
 			<BlogCard {post} />
 		</li>
 	{/each}

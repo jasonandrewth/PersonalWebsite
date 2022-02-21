@@ -27,11 +27,6 @@
 				style="opacity: 1;">Blog</a
 			><a
 				on:click={menuHandler}
-				class="font-title font-bold text-3xl md:text-6xl leading-loose md:leading-relaxed md:transform md:-translate-x-16"
-				href="/about"
-				style="opacity: 1;">About</a
-			><a
-				on:click={menuHandler}
 				class="font-title font-bold text-3xl md:text-6xl leading-loose md:leading-relaxed md:transform md:translate-x-16"
 				href="/contact"
 				style="opacity: 1;">Contact</a
