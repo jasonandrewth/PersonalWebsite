@@ -8,9 +8,9 @@
 	<div
 		class="w-12 md:w-14 m-0 py-7 text-center float-left h-full border-r-2 flex flex-col items-center justify-between"
 	>
-		<div class="writing-mode-vertical rotate-180 tracking-wide">
+		<div class="tracking-wide">
 			<a href={'/'}>
-				<h3>Jason Thompson</h3>
+				<h3>JT</h3>
 			</a>
 		</div>
 
@@ -22,11 +22,14 @@
 		</div>
 
 		<div class="flex flex-col p-0 ">
-			<ExternalLink classes="py-4" ariaLabel="github" href="https://github.com/jasonandrewth"
+			<ExternalLink
+				classes="py-4 hover:opacity-80"
+				ariaLabel="github"
+				href="https://github.com/jasonandrewth"
 				><img src="/github.svg" alt="GitHub Logo" /></ExternalLink
 			>
 
-			<ExternalLink ariaLabel="twitter" href="https://twitter.com"
+			<ExternalLink classes="hover:opacity-80" ariaLabel="twitter" href="https://twitter.com"
 				><img src="/twitter.svg" alt="Twitter Logo" /></ExternalLink
 			>
 		</div>
@@ -38,21 +41,21 @@
 		<nav class="absolute bottom-0 pb-4 flex items-center">
 			<ul class="list-none">
 				<li
-					class="transition-all writing-mode-vertical rotate-180 py-2 max-w-[24px] text-center max-height-[110px] whitespace-nowrap hover:text-red-600"
+					class="transition-all writing-mode-vertical rotate-180 py-2 max-w-[24px] text-center max-height-[110px] whitespace-nowrap hover:opacity-80"
 				>
 					<a href={`/`}>
 						<h3>HOME</h3>
 					</a>
 				</li>
 				<li
-					class="transition-all writing-mode-vertical rotate-180 py-2 max-w-[24px] text-center max-height-[110px] whitespace-nowrap hover:text-red-600"
+					class="transition-all writing-mode-vertical rotate-180 py-2 max-w-[24px] text-center max-height-[110px] whitespace-nowrap hover:opacity-80"
 				>
 					<a href="/blog">
 						<h3>BLOG</h3>
 					</a>
 				</li>
 				<li
-					class="transition-all writing-mode-vertical rotate-180 py-2 max-w-(24px) text-center max-height-(110px) whitespace-nowrap hover:text-red-600"
+					class="transition-all writing-mode-vertical rotate-180 py-2 max-w-(24px) text-center max-height-(110px) whitespace-nowrap hover:opacity-80"
 				>
 					<a href="/contact">
 						<h3>CONTACT</h3>

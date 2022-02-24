@@ -1,10 +1,14 @@
 <script lang="ts">
+	import SEO from '$lib/components/SEO/index.svelte';
 	export let title;
 	export let date;
+	export let description;
+	// export let path;
 
 	const dater = new Date(date)?.toLocaleString();
 </script>
 
+<SEO {title} {description} />
 <article class="relative md:px-4 mx-auto max-w-4xl">
 	<header class="mb-16">
 		<h1 class="text-4xl md:text-5xl tracking-wide text-center uppercase mb-4">{title}</h1>

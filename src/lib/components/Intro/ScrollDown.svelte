@@ -1,8 +1,16 @@
-<script>
+<script lang="ts">
 	import { onMount } from 'svelte';
 
+	let target: HTMLElement;
+
+	onMount(() => {
+		target = document.getElementById('projects');
+	});
+
 	const clickHandler = () => {
-		console.log('clicked');
+		target.scrollIntoView({
+			behavior: 'smooth'
+		});
 	};
 </script>
 

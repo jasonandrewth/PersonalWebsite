@@ -1,0 +1,26 @@
+const facebookPageName = import.meta.env.VITE_FACEBOOK_PAGE;
+
+const website = {
+  author: 'Jason Thompson',
+  entity: 'Rodney Lab',
+  ogLanguage: 'en_GB',
+  siteLanguage: 'en-GB',
+  siteTitle: 'Jason Thompson',
+  siteShortTitle: 'Jason Thompson', // used as SchemaOrg siteTitleAlt
+  siteUrl: import.meta.env.VITE_SITE_URL,
+  contactEmail: import.meta.env.VITE_CONTACT_EMAIL,
+  facebookAuthorPage: `https://www.facebook.com/${import.meta.env.VITE_FACEBOOK_AUTHOR_PAGE}`,
+  facebookPage: `https://www.facebook.com/${facebookPageName}`,
+  facebookPageName,
+  githubPage: import.meta.env.VITE_GITHUB_PAGE,
+  imgixDomain: import.meta.env.VITE_IMGIX_DOMAIN,
+  imgixSecureToken: import.meta.env.VITE_IMGIX_SECURE_TOKEN,
+  linkedinProfile: import.meta.env.VITE_LINKEDIN_PROFILE,
+  telegramUsername: import.meta.env.VITE_TELEGRAM_USERNAME,
+  tiktokUsername: import.meta.env.VITE_TIKTOK_USERNAME,
+  twitterUsername: import.meta.env.VITE_TWITTER_USERNAME,
+  twitterUserId: import.meta.env.VITE_TWITTER_ID,
+  wireUsername: import.meta.env.VITE_WIRE_USERNAME,
+};
+
+export { website as default };
