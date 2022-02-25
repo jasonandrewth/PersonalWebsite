@@ -27,7 +27,7 @@
 
 <h1 class="titleWrapper text-4xl mt-8 mb-8 text-center uppercase">contact</h1>
 
-<section class="w-full grid grid-cols-2 gap-1">
+<section class="w-full grid grid-cols-1 md:grid-cols-2 gap-1">
 	<ContactForm contactPage={false} />
 	<div class="pt-4">
 		<p>
