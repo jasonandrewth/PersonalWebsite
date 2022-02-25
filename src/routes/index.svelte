@@ -4,6 +4,8 @@
 	import ProjectCard from '$lib/components/Projects/components/ProjectCard.svelte';
 
 	let text = "Hi I'm Jason, a developer specializing in web technologies based in Berlin, Germany.";
+
+	import ContactForm from '$lib/components/Form/ContactForm.svelte';
 </script>
 
 <svelte:head>
@@ -22,3 +24,16 @@
 	/>
 	<ProjectCard title="World Ataraxia" img="/Grapevine.png" />
 </ProjectGrid>
+
+<h1 class="titleWrapper text-4xl mt-8 mb-8 text-center uppercase">contact</h1>
+
+<section class="w-full grid grid-cols-2 gap-1">
+	<ContactForm contactPage={false} />
+	<div class="pt-4">
+		<p>
+			Enim ex dolore dolore officia laborum enim enim deserunt eu proident esse. Commodo aliquip
+			culpa incididunt sit ut culpa aute sit non deserunt consequat aliquip. Commodo laborum qui
+			exercitation tempor in quis fugiat ut cillum nisi cillum et minim cupidatat.
+		</p>
+	</div>
+</section>

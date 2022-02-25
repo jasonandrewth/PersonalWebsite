@@ -17,8 +17,7 @@
 				<img
 					src={img}
 					alt="pic of sth"
-					class="webgl-image h-full max-h-[80vh] min-w-[45vw] lg:max-w-[50vw]"
-					height={100}
+					class="webgl-image h-[50vh] w-full md:w-[50vw] md:min-w-[40vw] object-cover"
 				/>
 			</div>
 			<section class="lg:px-8 lg:py-4 lg:flex flex-col justify-between">
@@ -26,10 +25,14 @@
 					<h2 class="item__title mb-2 text-4xl uppercase">{title || 'PROJECT'}</h2>
 					<p class="text-xl m-0 mb-4">
 						Octopuses sometimes partner with fish to hunt, but the partnership comes with risks (for
-						the fish, that is).
+						the fish, that is). Octopuses sometimes partner with fish to hunt, but the partnership
+						comes with risks (for the fish, that is). Octopuses sometimes partner with fish to hunt,
+						but the partnership comes with risks (for the fish, that is).
 					</p>
-					<Pill>Visit</Pill>
-					<Pill>Code</Pill>
+					<div class="text-xl m-0 mb-4">
+						<span>Visit</span>
+						<span>Code</span>
+					</div>
 				</div>
 
 				<div class="">
