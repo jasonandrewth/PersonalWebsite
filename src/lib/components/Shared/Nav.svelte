@@ -57,6 +57,13 @@
 				<li
 					class="transition-all writing-mode-vertical rotate-180 py-2 max-w-(24px) text-center max-height-(110px) whitespace-nowrap hover:opacity-80"
 				>
+					<a href="/about">
+						<h3>ABOUT</h3>
+					</a>
+				</li>
+				<li
+					class="transition-all writing-mode-vertical rotate-180 py-2 max-w-(24px) text-center max-height-(110px) whitespace-nowrap hover:opacity-80"
+				>
 					<a href="/contact">
 						<h3>CONTACT</h3>
 					</a>

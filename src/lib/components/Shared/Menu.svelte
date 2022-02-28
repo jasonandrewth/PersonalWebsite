@@ -9,7 +9,7 @@
 <div
 	class="mobilemenu {menuOpen
 		? 'open'
-		: 'closed'} md:hidden bg-gray-400 fixed top-0 left-0 w-full h-screen z-10 flex items-center justify-center"
+		: 'closed'} md:hidden bg-gray-400 fixed top-0 left-0 w-full h-screen z-10 grid place-items-center"
 >
 	<!-- <Canvas /> -->
 	<div class="overlay bg-gray-400 absolute w-full h-full opacity-90" />
@@ -20,7 +20,14 @@
 				class="font-title font-bold text-3xl md:text-6xl leading-loose md:leading-relaxed md:transform md:-translate-x-16"
 				href="/"
 				style="opacity: 1;">Home</a
-			><a
+			>
+			<a
+				on:click={menuHandler}
+				class="font-title font-bold text-3xl md:text-6xl leading-loose md:leading-relaxed md:transform md:translate-x-16"
+				href="/about"
+				style="opacity: 1;">About</a
+			>
+			<a
 				on:click={menuHandler}
 				class="font-title font-bold text-3xl md:text-6xl leading-loose md:leading-relaxed md:transform md:translate-x-16"
 				href="/blog"
