@@ -3,7 +3,7 @@
 </script>
 
 <article>
-	<a href={post.path} class="block">
+	<a sveltekit:prefetch href={post.path} class="block">
 		<h2 class="item__title text-4xl m-0 mb-1">{post.meta.title}</h2>
 		<p class="italic text-base m-0 mb-2">{post.meta.date}</p>
 		<p class="text-xl m-0">
