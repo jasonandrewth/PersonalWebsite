@@ -2,7 +2,7 @@
 	import IntersectionObserver from 'svelte-intersection-observer';
 	import { fade } from 'svelte/transition';
 
-	import Pill from './Pill.svelte';
+	import Pill from './components/Pill.svelte';
 
 	export let title: string;
 	export let img: string;
@@ -17,7 +17,7 @@
 				<img
 					src={img}
 					alt="pic of sth"
-					class="webgl-image h-[50vh] w-full md:w-[50vw] md:min-w-[40vw] object-cover"
+					class="webgl-image md:h-[50vh] w-full md:w-[50vw] md:min-w-[40vw] object-cover"
 				/>
 			</div>
 			<section class="lg:px-8 lg:py-4 lg:flex flex-col justify-between">

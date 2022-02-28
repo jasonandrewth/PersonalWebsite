@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Intro from '$lib/components/Intro/Intro.svelte';
 	import ProjectGrid from '$lib/components/Projects/ProjectGrid.svelte';
-	import ProjectCard from '$lib/components/Projects/components/ProjectCard.svelte';
+	import ProjectCard from '$lib/components/Projects/ProjectCard.svelte';
 
 	let text = "Hi I'm Jason, a developer specializing in web technologies based in Berlin, Germany.";
 
@@ -27,8 +27,7 @@
 
 <h1 class="titleWrapper text-4xl mt-8 mb-8 text-center uppercase">contact</h1>
 
-<section class="w-full grid grid-cols-1 md:grid-cols-2 gap-1">
-	<ContactForm contactPage={false} />
+<section id="contact" class="w-full grid grid-cols-1 md:grid-cols-2 gap-1">
 	<div class="pt-4">
 		<p>
 			Enim ex dolore dolore officia laborum enim enim deserunt eu proident esse. Commodo aliquip
@@ -36,4 +35,5 @@
 			exercitation tempor in quis fugiat ut cillum nisi cillum et minim cupidatat.
 		</p>
 	</div>
+	<ContactForm contactPage={false} />
 </section>
