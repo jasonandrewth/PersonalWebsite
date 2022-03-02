@@ -3,7 +3,7 @@
 	import website from '$lib/config/website';
 
 	import OpenGraph from './OpenGraph.svelte';
-	import SchemaOrg from './SchemaOrg.svelte';
+	// import SchemaOrg from './SchemaOrg.svelte';
 	import Twitter from './Twitter.svelte';
 
 	const { siteLanguage, siteTitle } = website;

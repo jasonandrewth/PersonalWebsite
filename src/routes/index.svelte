@@ -1,4 +1,5 @@
 <script lang="ts">
+	import SEO from '$lib/components/SEO/index.svelte';
 	import Intro from '$lib/components/Intro/Intro.svelte';
 	import ProjectGrid from '$lib/components/Projects/ProjectGrid.svelte';
 	import ProjectCard from '$lib/components/Projects/ProjectCard.svelte';
@@ -8,9 +9,7 @@
 	import ContactForm from '$lib/components/Form/ContactForm.svelte';
 </script>
 
-<svelte:head>
-	<title>Portfolio Home</title>
-</svelte:head>
+<SEO title={'Home'} description={'Web developer based in Berlin'} />
 
 <Intro {text} />
 <ProjectGrid>
@@ -23,9 +22,12 @@
 		img="https://media.istockphoto.com/photos/hand-chooses-with-happy-smile-face-emoticon-icons-on-wooden-cube-good-picture-id1283822563?b=1&k=20&m=1283822563&s=170667a&w=0&h=8oEZVbSu503x-ATRQgV2NOhi9XHNlvExW3OU2P66cNI="
 	/>
 	<ProjectCard title="World Ataraxia" img="/Grapevine.png" />
+	<ProjectCard title="Grapevine Berlin" img="/Grapevine.png" />
 </ProjectGrid>
 
-<h1 class="titleWrapper text-4xl mt-8 mb-8 text-center uppercase">contact</h1>
+<h1 class="text-4xl md:text-6xl mt-8 mb-8 uppercase border-b border-white border-solid pb-4">
+	contact
+</h1>
 
 <section id="contact" class="w-full grid grid-cols-1 md:grid-cols-2 gap-1">
 	<div class="pt-4 text-xl">

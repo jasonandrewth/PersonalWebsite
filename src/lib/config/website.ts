@@ -2,7 +2,7 @@ const facebookPageName = import.meta.env.VITE_FACEBOOK_PAGE;
 
 const website = {
   author: 'Jason Thompson',
-  entity: 'Rodney Lab',
+  entity: 'Jason Thompson',
   ogLanguage: 'en_GB',
   siteLanguage: 'en-GB',
   siteTitle: 'Jason Thompson',
