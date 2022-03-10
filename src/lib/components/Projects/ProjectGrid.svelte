@@ -1,12 +1,11 @@
 <script lang="ts">
+	import Heading from '../UI/Heading.svelte';
 </script>
 
 <section id="projects" class="pt-8">
-	<h1 class="text-4xl md:text-6xl mb-8 uppercase border-b border-white border-solid pb-4">
-		projects
-	</h1>
+	<Heading>projects</Heading>
 
-	<div class="grid grid-cols-1 gap-y-8 lg:gap-y-24">
+	<div class="grid grid-cols-1 gap-y-8 lg:gap-y-24 mb-8 lg:mb-24">
 		<slot />
 	</div>
 </section>

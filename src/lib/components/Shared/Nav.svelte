@@ -1,5 +1,5 @@
 <script lang="ts">
-	import ExternalLink from '../ExternalLink.svelte';
+	import ExternalLink from '../UI/ExternalLink.svelte';
 
 	export let menuHandler: (e: Event) => void;
 </script>
@@ -8,9 +8,10 @@
 	<div
 		class="w-12 md:w-14 m-0 py-7 text-center float-left h-full border-r-2 flex flex-col items-center justify-between"
 	>
-		<div class="tracking-wide">
+		<div>
 			<a href={'/'}>
-				<h3>JT</h3>
+				<img src="/jason6logo.svg" alt="GitHub Logo" class="max-h-4" />
+				<!-- <h3>JT</h3> -->
 			</a>
 		</div>
 

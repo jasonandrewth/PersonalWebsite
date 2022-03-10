@@ -14,6 +14,7 @@
 
 <script>
 	// This is the "normal" client-side script
+	import Heading from '$lib/components/UI/Heading.svelte';
 	import BlogCard from '$lib/components/Blog/BlogCard.svelte';
 	export let posts;
 </script>
@@ -26,6 +27,7 @@
 	eiusmod. Exercitation non sunt consectetur dolor. Adipisicing excepteur aute excepteur laboris
 	dolore consequat ullamco Lorem nostrud sunt minim minim veniam laborum.
 </p> -->
+<Heading>blog</Heading>
 
 <ul>
 	{#each posts as post}

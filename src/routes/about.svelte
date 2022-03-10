@@ -1,14 +1,18 @@
 <script lang="ts">
 	import SEO from '$lib/components/SEO/index.svelte';
+	import Heading from '$lib/components/UI/Heading.svelte';
 </script>
 
 <SEO title={'About'} description={'about me'} />
 
-<h1 class="text-4xl md:text-6xl mb-8 uppercase border-b border-white border-solid pb-4">about</h1>
+<Heading>about</Heading>
 
-<div class="pt-4 text-xl">
+<div class="pt-4 text-xl md:max-w-[70vw]">
 	<p>
-		I’m interested in freelance opportunities – especially ambitious or large projects. However, if
-		you have other request or question, don’t hesitate to use the form.
+		Nisi cupidatat culpa consequat nulla reprehenderit minim id et occaecat. Magna eu esse sunt
+		reprehenderit incididunt aliqua dolore non ex quis. Minim occaecat ut est in pariatur
+		reprehenderit in ex. Nisi cupidatat culpa consequat nulla reprehenderit minim id et occaecat.
+		Magna eu esse sunt reprehenderit incididunt aliqua dolore non ex quis. Minim occaecat ut est in
+		pariatur reprehenderit in ex.
 	</p>
 </div>

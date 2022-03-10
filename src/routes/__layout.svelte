@@ -12,7 +12,8 @@
 
 <script lang="ts">
 	import { browser } from '$app/env';
-	import { page } from '$app/stores';
+	import { page, navigating } from '$app/stores';
+	import { loading } from '$lib/loading';
 
 	// import '../app.css';
 	import 'prism-themes/themes/prism-dracula.css';
@@ -22,6 +23,8 @@
 	import TipJar from '../lib/components/TipJar/TipJar.svelte';
 	import Nav from '../lib/components/Shared/Nav.svelte';
 	import Menu from '$lib/components/Shared/Menu.svelte';
+	import Footer from '$lib/components/Shared/Footer.svelte';
+	import Loading from '$lib/components/Shared/Loading.svelte';
 
 	export let currentRoute;
 
@@ -32,8 +35,12 @@
 		menuOpen = !menuOpen;
 	};
 
+	//always false when route changes
 	$: (menuOpen = false), $page;
+	//always add noscroll to body when menu is open
 	$: if (browser) document.body.classList.toggle('noscroll', menuOpen);
+	//reactive statement, loading true when navigating is true
+	$: $loading = !!$navigating;
 </script>
 
 <!-- __layout.svelte -->
@@ -44,9 +51,11 @@
 		in:fade={{ duration: 150, delay: 150 }}
 		out:fade={{ duration: 150 }}
 	>
+		<Loading />
 		<slot />
 
 		<Menu {menuOpen} {menuHandler} />
+		<Footer />
 	</main>
 {/key}
 

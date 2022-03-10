@@ -6,7 +6,7 @@ published: true
 ---
 
 <script>
-  import ExternalLink from '$lib/components/ExternalLink.svelte'
+  import ExternalLink from '$lib/components/UI/ExternalLink.svelte'
 </script>
 
 ## Uses
