@@ -6,9 +6,6 @@ import { mdsvex } from 'mdsvex';
 const config = {
 	kit: {
 		adapter: adapter(),
-
-		// hydrate the <div id="svelte"> element in src/app.html
-		target: '#svelte',
 	},
 	extensions: ['.svelte', '.md'],
 	// preprocess: sveltePreprocess()
