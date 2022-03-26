@@ -28,7 +28,7 @@
 	</div>
 	<div class="py-3 pt-4 md:p-3">
 		<button
-			on:click|preventDefault
+			on:click|preventDefault={() => {window.alert("Form not set up yet please use the E-Mail provided in the footer at the bottom of the website")}}
 			class="w-full bg-transparent border transition-all hover:opacity-80 text-white py-2 px-4 text-xl md:text-2xl"
 		>
 			Send

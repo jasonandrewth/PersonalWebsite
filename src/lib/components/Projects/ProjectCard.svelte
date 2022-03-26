@@ -6,6 +6,9 @@
 
 	export let title: string;
 	export let img: string;
+	export let description: string;
+	export let roles: string[];
+	export let tech: string[]
 
 	let node;
 </script>
@@ -16,7 +19,7 @@
 			<div class="mb-4">
 				<img
 					src={img}
-					alt="pic of sth"
+					alt={title}
 					class="webgl-image md:h-[50vh] w-full md:w-[50vw] md:min-w-[40vw] object-cover"
 				/>
 			</div>
@@ -24,10 +27,7 @@
 				<div>
 					<h2 class="item__title mb-2 text-4xl uppercase">{title || 'PROJECT'}</h2>
 					<p class="text-xl m-0 mb-4">
-						Octopuses sometimes partner with fish to hunt, but the partnership comes with risks (for
-						the fish, that is). Octopuses sometimes partner with fish to hunt, but the partnership
-						comes with risks (for the fish, that is). Octopuses sometimes partner with fish to hunt,
-						but the partnership comes with risks (for the fish, that is).
+						{description}
 					</p>
 					<div class="text-xl m-0 mb-4">
 						<span>Visit</span>
@@ -38,14 +38,15 @@
 				<div class="">
 					<p class="text-xl m-0">Role:</p>
 					<div class="flex mt-2 mb-4">
-						<Pill>Development</Pill>
-						<Pill>Design</Pill>
+						{#each roles as role}
+						<Pill>{role}</Pill>
+		                {/each}
 					</div>
 					<p class="text-xl m-0">Tech:</p>
 					<div class="flex mt-2 mb-4">
-						<Pill>Next.js</Pill>
-						<Pill>Contentful CMS</Pill>
-						<Pill>Three.js</Pill>
+						{#each tech as techOption}
+						<Pill>{techOption}</Pill>
+		                {/each}
 					</div>
 				</div>
 			</section>

@@ -5,6 +5,9 @@
 	import ProjectCard from '$lib/components/Projects/ProjectCard.svelte';
 	import Heading from '$lib/components/UI/Heading.svelte';
 
+	//Import projects
+	import projects from '$lib/data/projects.json';
+
 	let text = "Hi I'm Jason, a developer specializing in web technologies based in Berlin, Germany.";
 
 	import ContactForm from '$lib/components/Form/ContactForm.svelte';
@@ -14,18 +17,20 @@
 
 <Intro {text} />
 
+{#if projects.length > 0}
 <ProjectGrid>
+	{#each projects as { image, title, description, roles, tech }, index}
 	<ProjectCard
-		title="17Lps"
-		img="https://media.istockphoto.com/photos/mature-beautiful-woman-with-red-hair-picture-id1221755378?s=612x612"
-	/>
-	<ProjectCard
-		title="Kiss Me I'm Famous"
-		img="https://media.istockphoto.com/photos/hand-chooses-with-happy-smile-face-emoticon-icons-on-wooden-cube-good-picture-id1283822563?b=1&k=20&m=1283822563&s=170667a&w=0&h=8oEZVbSu503x-ATRQgV2NOhi9XHNlvExW3OU2P66cNI="
-	/>
-	<ProjectCard title="World Ataraxia" img="/Grapevine.png" />
-	<ProjectCard title="Grapevine Berlin" img="/Grapevine.png" />
+	title={title}
+	img={image}
+	description={description}
+	roles={roles}
+	tech={tech}
+    />
+    {/each}
+
 </ProjectGrid>
+{/if}
 
 <Heading>contact</Heading>
 

@@ -1,3 +1,7 @@
+<script lang="ts">
+	import ExternalLink from '../UI/ExternalLink.svelte';
+</script>
+
 <footer
 	class="w-full mt-32 border border-white grid grid-rows-3 md:grid-rows-2 grid-cols-2 md:grid-cols-6 2xl:grid-cols-10 uppercase text-base md:text-xl"
 >
@@ -12,7 +16,13 @@
 		Mail: jasonxandrewth@gmail.com
 	</div>
 	<div class="p-4 row-start-3 md:row-start-2 border-r col-span-4 md:col-start-2">
-		Website built with SvelteKit. View the code here
+		Website built with SvelteKit. View the code <ExternalLink
+		       classes="hover:opacity-80"
+				ariaLabel="github code"
+				href="https://github.com/jasonandrewth/PersonalWebsite"
+				>
+				here
+				</ExternalLink>
 	</div>
 	<!-- <div class="p-4 col-span-1 row-span-1">Website built with SvelteKit. View the code here</div> -->
 	<div
