@@ -8,7 +8,7 @@
 	//Import projects
 	import projects from '$lib/data/projects.json';
 
-	let text = "Hi I'm Jason, a developer specializing in web technologies based in Berlin, Germany.";
+	let text = "Hi I'm Jason, a web developer based in Berlin, Germany.";
 
 	import ContactForm from '$lib/components/Form/ContactForm.svelte';
 </script>
@@ -36,10 +36,10 @@
 <Heading>contact</Heading>
 
 <section id="contact" class="w-full grid grid-cols-1 md:grid-cols-2 gap-1">
-	<div class="pt-4 text-xl">
+	<div class="pt-4 text-xl mb-2">
 		<p>
-			I’m interested in freelance opportunities – especially ambitious or large projects. However,
-			if you have other request or question, don’t hesitate to use the form.
+			I'm interested in freelance opportunities and collaborations in almost any field where my skills can be of use. However,
+			if you have other request or question, don't hesitate to use the form.
 		</p>
 	</div>
 	<ContactForm contactPage={false} />
