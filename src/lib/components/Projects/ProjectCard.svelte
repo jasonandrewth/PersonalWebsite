@@ -1,12 +1,14 @@
 <script lang="ts">
 	import IntersectionObserver from 'svelte-intersection-observer';
 	import { fade } from 'svelte/transition';
+    import ExternalLink from '../UI/ExternalLink.svelte';
 
 	import Pill from './components/Pill.svelte';
 
 	export let title: string;
 	export let img: string;
 	export let description: string;
+	export let activeLink: string;
 	export let roles: string[];
 	export let tech: string[]
 
@@ -30,8 +32,16 @@
 						{description}
 					</p>
 					<div class="text-xl m-0 mb-4">
-						<span>Visit</span>
-						<span>Code</span>
+						{#if activeLink}
+						<ExternalLink classes="hover:opacity-80" href={activeLink} ariaLabel="Grapevine">
+							<span>Visit</span>
+						</ExternalLink>
+						{/if}
+						<!-- {#if activeLink}
+						<ExternalLink classes="hover:opacity-80" href="https://www.grapevineberlin.com/" ariaLabel="Grapevine">
+							<span>Code</span>
+						</ExternalLink>
+						{/if} -->	
 					</div>
 				</div>
 

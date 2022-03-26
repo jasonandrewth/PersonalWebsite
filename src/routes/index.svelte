@@ -19,11 +19,12 @@
 
 {#if projects.length > 0}
 <ProjectGrid>
-	{#each projects as { image, title, description, roles, tech }, index}
+	{#each projects as { image, title, description, link, roles, tech }, index}
 	<ProjectCard
 	title={title}
 	img={image}
 	description={description}
+	activeLink={link}
 	roles={roles}
 	tech={tech}
     />

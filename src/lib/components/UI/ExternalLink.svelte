@@ -1,7 +1,7 @@
-<script>
+<script lang="ts">
 	export let rel = 'nofollow noopener noreferrer';
 	export let target = '_blank';
-	export let href;
+	export let href: string;
 	export let ariaLabel;
 	export let classes = '';
 </script>
