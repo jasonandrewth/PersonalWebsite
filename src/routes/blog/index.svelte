@@ -12,7 +12,7 @@
 	};
 </script>
 
-<script>
+<script lang="ts">
 	// This is the "normal" client-side script
 	import Heading from '$lib/components/UI/Heading.svelte';
 	import BlogCard from '$lib/components/Blog/BlogCard.svelte';
@@ -30,9 +30,9 @@
 <Heading>blog</Heading>
 
 <ul>
-	{#each posts as post}
+	<!-- {#each posts as post}
 		<li class="first:border-none mb-8 py-4 border-t border-white border-opacity-50">
 			<BlogCard {post} />
 		</li>
-	{/each}
+	{/each} -->
 </ul>
