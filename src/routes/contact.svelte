@@ -13,7 +13,7 @@
 	<div class="pt-4 text-xl mb-2">
 		<p>
 			I'm interested in freelance opportunities and collaborations in almost any field where my skills can be of use. However,
-			if you have other request or question, don't hesitate to use the form.
+			if you have other request or questions, don't hesitate to use the form.
 		</p>
 	</div>
 	<ContactForm contactPage={false} />
