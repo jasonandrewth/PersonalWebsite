@@ -7,7 +7,7 @@
 
 <Heading>legal</Heading>
 
-<section class="prose text-white">
+<section class="prose-xl lg:prose-2xl text-white">
 	<p>Kontakt E-Mail: jasonxandrewth@gmail.com</p>
 
 	<h2>Haftung für Inhalte</h2>
