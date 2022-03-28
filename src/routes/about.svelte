@@ -9,7 +9,7 @@
 
 <div class="pt-4 text-xl md:max-w-[70vw] prose-xl lg:prose-2xl text-white">
 	<p>
-		Hi, I'm Jason. As a developer I create applications and interfaces for the web. I like working on more playful / gamified web experiences that might diverge from tested UX patterns. In a more general sense, I enjoy exploring how systems and humans interlink in sometimes unexpected ways through both technology and theory.
+		Hi, I'm Jason. As a developer I create applications and interfaces for the web. I like working on more playful / gamified web experiences that might diverge from tested UX patterns. In a more general sense, I enjoy exploring how systems and humans interact in sometimes unexpected ways through both technology and theory.
 	</p>
   <p>
 	While I mostly focus on client-side interfaces, interactively visualizing different data sources or even building physical devices in the realm of IoT Design are also fields I'm interested in.
