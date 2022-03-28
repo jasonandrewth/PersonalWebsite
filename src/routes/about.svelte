@@ -7,7 +7,7 @@
 
 <Heading>about</Heading>
 
-<div class="pt-4 text-xl md:max-w-[70vw] prose text-white">
+<div class="pt-4 text-xl md:max-w-[70vw] prose-xl lg:prose-2xl text-white">
 	<p>
 		Hi, I'm Jason. As a developer I create applications and interfaces for the web. I like working on more playful / gamified web experiences that might diverge from tested UX patterns. In a more general sense, I enjoy exploring how systems and humans interlink in sometimes unexpected ways through both technology and theory.
 	</p>
@@ -19,3 +19,9 @@
 	If you would like to work with me in any of these fields feel free to <a class="text-white inline-block" href="/contact">contact me</a>.
   </p>
 </div>
+
+<style>
+	strong {
+		@apply text-white;
+	}
+</style>
