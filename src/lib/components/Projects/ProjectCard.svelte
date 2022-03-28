@@ -28,10 +28,10 @@
 			<section class="lg:px-8 lg:py-4 lg:flex flex-col justify-between">
 				<div>
 					<h2 class="item__title mb-2 text-4xl uppercase">{title || 'PROJECT'}</h2>
-					<p class="text-xl m-0 mb-4">
+					<p class="text-xl lg:text-2xl m-0 mb-4">
 						{description}
 					</p>
-					<div class="text-xl m-0 mb-4">
+					<div class="text-xl lg:text-2xl m-0 mb-4">
 						{#if activeLink}
 						<ExternalLink classes="hover:opacity-80" href={activeLink} ariaLabel="Grapevine">
 							<span>Visit</span>
@@ -46,13 +46,13 @@
 				</div>
 
 				<div class="">
-					<p class="text-xl m-0">Role:</p>
+					<p class="text-xl lg:text-2xl m-0">Role:</p>
 					<div class="flex mt-2 mb-4">
 						{#each roles as role}
 						<Pill>{role}</Pill>
 		                {/each}
 					</div>
-					<p class="text-xl m-0">Tech:</p>
+					<p class="text-xl lg:text-2xl m-0">Tech:</p>
 					<div class="flex mt-2 mb-4">
 						{#each tech as techOption}
 						<Pill>{techOption}</Pill>
