@@ -14,7 +14,7 @@
   <p>
 	While I mostly focus on client-side interfaces, interactively visualizing different data sources or even building physical devices in the realm of IoT Design are also fields I'm interested in.
   </p>
-  I mainly use modern JavaScript in my work. On the user-facing side I prefer using JavaScript frameworks like ReactJS or Svelte with CSS preprocessors or Tailwind CSS. For more interactive visualizations I use WebGL through Three.js, sometimes writing my own shaders in GLSL. When designing an interface myself, that process mostly takes place in Figma before building it out. On the backend I usually like to implement solutions in a Node.js environment. For IoT projects I like using the Arduino platform or Raspberry Pi.
+  I mainly use modern JavaScript in my work. On the user-facing side I prefer using JavaScript frameworks like <strong>ReactJS</strong> or <strong>Svelte</strong> with CSS preprocessors or Tailwind CSS. For more interactive experiences I use WebGL through <strong>Three.js</strong>, sometimes writing my own shaders in <strong>GLSL</strong>. When designing an interface myself, that process mostly takes place in <strong>Figma</strong> before building it out. On the backend I usually like to implement solutions in a <strong>Node.js</strong> environment. For IoT projects I like using the <strong>Arduino</strong> platform or <strong>Raspberry Pi</strong>.
   <p>
 	If you would like to work with me in any of these fields feel free to <a class="text-white inline-block" href="/contact">contact me</a>.
   </p>
