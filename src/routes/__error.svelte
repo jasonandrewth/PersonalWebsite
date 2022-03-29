@@ -1,4 +1,4 @@
-<script context="module">
+<script context="module" lang="ts">
 	export async function load({ error, status }) {
 		return {
 			props: { error, status }

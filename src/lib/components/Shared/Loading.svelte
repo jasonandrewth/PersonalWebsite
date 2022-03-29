@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { loading } from '$lib/loading';
 
-	const wait = () => new Promise((resolve) => setTimeout(resolve, 600));
+	const wait = () => new Promise((resolve) => setTimeout(resolve, 800));
 </script>
 
 {#if $loading}

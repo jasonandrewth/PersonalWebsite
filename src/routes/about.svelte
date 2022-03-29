@@ -3,7 +3,7 @@
 	import Heading from '$lib/components/UI/Heading.svelte';
 </script>
 
-<SEO title={'About'} description={'about me'} />
+<SEO title={'About'} description={'Hi, Im Jason. As a developer I create applications and interfaces for the web. I like working on more playful / gamified web experiences that might diverge from tested UX patterns. In a more general sense, I enjoy exploring how systems and humans interact in sometimes unexpected ways through both technology and theory.'} />
 
 <Heading>about</Heading>
 

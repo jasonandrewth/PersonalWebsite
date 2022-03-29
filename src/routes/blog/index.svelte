@@ -14,11 +14,13 @@
 
 <script lang="ts">
 	// This is the "normal" client-side script
+	import SEO from '$lib/components/SEO/index.svelte';
 	import Heading from '$lib/components/UI/Heading.svelte';
 	import BlogCard from '$lib/components/Blog/BlogCard.svelte';
 	export let posts;
 </script>
 
+<SEO title="Blog" description="My Blog" />
 <!-- <h1>Blog</h1>
 
 <p>
