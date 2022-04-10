@@ -20,11 +20,12 @@
 	import '$lib/styles/style.scss';
 	import { fade } from 'svelte/transition';
 
-	import TipJar from '../lib/components/TipJar/TipJar.svelte';
-	import Nav from '../lib/components/Shared/Nav.svelte';
+	import TipJar from '$lib/components/TipJar/TipJar.svelte';
+	import Nav from '$lib/components/Shared/Nav.svelte';
 	import Menu from '$lib/components/Shared/Menu.svelte';
 	import Footer from '$lib/components/Shared/Footer.svelte';
 	import Loading from '$lib/components/Shared/Loading.svelte';
+	import Canvas from '$lib/components/Canvas/Canvas.svelte';
 
 	export let currentRoute;
 
@@ -45,6 +46,7 @@
 
 <!-- __layout.svelte -->
 <Nav {menuHandler} />
+<!-- <TipJar /> -->
 {#key currentRoute}
 	<main
 		class=" ml-12 md:ml-28 p-4 md:p-8 max-w-screen md:max-w-[90vw] mx-auto my-0 relative"
@@ -58,5 +60,3 @@
 		<Footer />
 	</main>
 {/key}
-
-<!-- <TipJar /> -->

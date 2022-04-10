@@ -11,8 +11,8 @@
 		? 'open'
 		: 'closed'} md:hidden bg-gray-400 fixed top-0 left-0 w-full h-screen z-10 grid place-items-center"
 >
-	<!-- <Canvas /> -->
-	<div class="overlay bg-gray-400 absolute w-full h-full opacity-90" />
+	<Canvas />
+	<div class="overlay bg-gray-400 absolute w-full h-full opacity-80" />
 	<div class="container flex flex-row items-stretch gap-24 z-20">
 		<div class="ml-12 flex flex-col items-center w-full">
 			<a

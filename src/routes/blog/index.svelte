@@ -1,6 +1,7 @@
 <script context="module" lang="ts">
+	import type { Load } from '@sveltejs/kit';
 	// Before content is loaded
-	export const load = async ({ fetch }) => {
+	export const load: Load = async ({ fetch }) => {
 		const posts = await fetch('/api/posts.json');
 		const allPosts = await posts.json();
 

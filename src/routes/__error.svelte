@@ -8,13 +8,12 @@
 
 <script>
 	import { dev } from '$app/env';
+	import SEO from '$lib/components/SEO/index.svelte';
 	export let status;
 	export let error;
 </script>
 
-<svelte:head>
-	<title>{status}</title>
-</svelte:head>
+<SEO title={status} description />
 
 <div>
 	<h1>{status}</h1>

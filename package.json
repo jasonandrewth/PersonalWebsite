@@ -41,8 +41,9 @@
     "p-map": "^5.3.0",
     "postcss": "^8.4.12",
     "svelte-scrolling": "^1.1.1",
+    "svelte-web3": "^3.3.9",
     "three": "^0.137.5",
     "vite-imagetools": "^4.0.3",
-    "web3": "^1.2.6"
+    "web3": "^1.7.1"
   }
 }
