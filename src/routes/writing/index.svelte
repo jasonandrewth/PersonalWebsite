@@ -21,7 +21,7 @@
 	export let posts;
 </script>
 
-<SEO title="Blog" description="My Blog" />
+<SEO title="Writing" description="Articles on tech and other topics" />
 <!-- <h1>Blog</h1>
 
 <p>
@@ -30,7 +30,7 @@
 	eiusmod. Exercitation non sunt consectetur dolor. Adipisicing excepteur aute excepteur laboris
 	dolore consequat ullamco Lorem nostrud sunt minim minim veniam laborum.
 </p> -->
-<Heading>blog</Heading>
+<Heading>writing</Heading>
 
 <ul>
 	<!-- {#each posts as post}

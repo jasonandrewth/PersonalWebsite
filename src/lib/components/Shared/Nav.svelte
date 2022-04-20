@@ -51,8 +51,8 @@
 				<li
 					class="transition-all writing-mode-vertical rotate-180 py-2 max-w-[24px] text-center max-height-[110px] whitespace-nowrap hover:opacity-80"
 				>
-					<a href="/blog">
-						<h3>BLOG</h3>
+					<a href="/writing">
+						<h3>WRITING</h3>
 					</a>
 				</li>
 				<li

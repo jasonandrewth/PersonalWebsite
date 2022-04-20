@@ -1,5 +1,6 @@
 <script lang="ts">
 	import * as THREE from 'three';
+	import glslify from 'glslify';
 
 	import { onMount } from 'svelte';
 
@@ -20,21 +21,43 @@
 		const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
 
 		const material = new THREE.ShaderMaterial({
-			vertexShader: `
-        varying vec2 vUv;
-        
-        void main() {
-            vUv = uv;
-            gl_Position = vec4( position, 1.0 );    
-        }
+			side: THREE.DoubleSide,
+			transparent: true,
+			extensions: {
+				derivatives: true
+			},
+			uniforms: {
+				time: { value: 0 },
+				density: { value: 1.0 }
+			},
+			vertexShader: /*glsl*/ `
+      varying vec3 vPosition;
+      void main () {
+        vPosition = position;
+        gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+      }
       `,
-			fragmentShader: `
-        varying vec2 vUv;
-         
-        void main() {
-            gl_FragColor = vec4( 0.0, vUv.x, vUv.y, 1.0 );
-        }
-      `
+			fragmentShader: glslify(/* glsl */ `
+      precision highp float;
+      varying vec3 vPosition;
+      uniform float time;
+      uniform float density;
+      #pragma glslify: noise = require(glsl-noise/simplex/4d);
+      #define PI 3.141592653589793
+      float patternZebra(float v){
+        float d = 1.0 / density;
+        float s = -cos(v / d * PI * 2.);
+        return smoothstep(.0, .1 * d, .1 * s / fwidth(s));
+      }
+      void main () {
+        float frequency = .6;
+        float amplitude = 1.5;
+        float noiseValue = noise(vec4(vPosition * frequency, sin(PI * time))) * amplitude;
+        float t = patternZebra(noiseValue);
+        vec3 fragColor = mix(vec3(1.,0.4,0.369), vec3(0.824,0.318,0.369), t);
+        gl_FragColor = vec4(fragColor, 1.);
+      }
+      `)
 		});
 
 		const renderer = new THREE.WebGLRenderer({ alpha: true });
