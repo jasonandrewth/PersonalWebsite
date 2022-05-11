@@ -19,9 +19,7 @@
 	</p>
 	<p>
 		While I mostly focus on client-side interfaces, interactively visualizing different data sources
-		or even building physical devices in the realm of IoT Design, i.e with the
-		<strong>Arduino</strong>
-		platform or <strong>Raspberry Pi</strong>, are also fields I'm interested in.
+		or even building physical devices in the realm of IoT Design are also fields I'm interested in.
 	</p>
 	<!-- I mainly use modern JavaScript in my work. On the user-facing side I prefer using JavaScript frameworks
 	like<strong>ReactJS</strong> or <strong>Svelte</strong> with CSS preprocessors or Tailwind CSS.

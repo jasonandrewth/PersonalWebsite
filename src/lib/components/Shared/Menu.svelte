@@ -30,8 +30,8 @@
 			<a
 				on:click={menuHandler}
 				class="font-title font-bold text-3xl md:text-6xl leading-loose md:leading-relaxed md:transform md:translate-x-16"
-				href="/blog"
-				style="opacity: 1;">Blog</a
+				href="/writing"
+				style="opacity: 1;">Writing</a
 			><a
 				on:click={menuHandler}
 				class="font-title font-bold text-3xl md:text-6xl leading-loose md:leading-relaxed md:transform md:translate-x-16"
