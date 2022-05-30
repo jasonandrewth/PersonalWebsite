@@ -1,16 +1,16 @@
 <script lang="ts">
 	import IntersectionObserver from 'svelte-intersection-observer';
 	import { fade } from 'svelte/transition';
-    import ExternalLink from '../UI/ExternalLink.svelte';
+	import ExternalLink from '../UI/ExternalLink.svelte';
 
 	import Pill from './components/Pill.svelte';
 
 	export let title: string;
 	export let img: string;
 	export let description: string;
-	export let activeLink: string;
+	export let activeLink: string | undefined | null;
 	export let roles: string[];
-	export let tech: string[]
+	export let tech: string[];
 
 	let node;
 </script>
@@ -33,15 +33,15 @@
 					</p>
 					<div class="text-xl lg:text-2xl m-0 mb-4">
 						{#if activeLink}
-						<ExternalLink classes="hover:opacity-80" href={activeLink} ariaLabel="Grapevine">
-							<span>Visit</span>
-						</ExternalLink>
+							<ExternalLink classes="hover:opacity-80" href={activeLink} ariaLabel="Grapevine">
+								<span>Visit</span>
+							</ExternalLink>
 						{/if}
 						<!-- {#if activeLink}
 						<ExternalLink classes="hover:opacity-80" href="https://www.grapevineberlin.com/" ariaLabel="Grapevine">
 							<span>Code</span>
 						</ExternalLink>
-						{/if} -->	
+						{/if} -->
 					</div>
 				</div>
 
@@ -49,14 +49,14 @@
 					<p class="text-xl lg:text-2xl m-0">Role:</p>
 					<div class="flex mt-2 mb-4">
 						{#each roles as role}
-						<Pill>{role}</Pill>
-		                {/each}
+							<Pill>{role}</Pill>
+						{/each}
 					</div>
 					<p class="text-xl lg:text-2xl m-0">Tech:</p>
 					<div class="flex mt-2 mb-4">
 						{#each tech as techOption}
-						<Pill>{techOption}</Pill>
-		                {/each}
+							<Pill>{techOption}</Pill>
+						{/each}
 					</div>
 				</div>
 			</section>

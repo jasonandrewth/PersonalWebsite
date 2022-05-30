@@ -1,8 +1,8 @@
 ---
 title: Building a plant controlled AI Twitter Bot
 description: Build an AI Twitter Bot that reacts to sensory input from your houseplant
-date: "2021-12-20"
-published: true
+date: "2022-05-26"
+published: false
 ---
 
 <script>
