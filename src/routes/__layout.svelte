@@ -57,6 +57,7 @@
 			in:fade={{ duration: 150, delay: 150 }}
 			out:fade={{ duration: 150 }}
 		>
+			<!-- //canvas -->
 			<!-- <Canvas /> -->
 			<Loading />
 			<slot />
