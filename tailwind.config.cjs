@@ -10,6 +10,7 @@ module.exports = {
     './src/**/*.html',
     './src/**/*.svelte'
   ],
+  darkMode: 'class',
   theme: {
     extend: {},
   },

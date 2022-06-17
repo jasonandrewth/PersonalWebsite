@@ -1,5 +1,6 @@
 <script context="module" lang="ts">
-	export const load = ({ url }) => {
+	import type { Load } from '@sveltejs/kit';
+	export const load: Load = ({ url }) => {
 		const currentRoute = url.pathname;
 
 		return {
@@ -31,6 +32,8 @@
 
 	let menuOpen = false;
 
+	let dark = true;
+
 	const menuHandler = (e: Event) => {
 		e.preventDefault;
 		menuOpen = !menuOpen;
@@ -44,19 +47,22 @@
 	$: $loading = !!$navigating;
 </script>
 
-<!-- __layout.svelte -->
-<Nav {menuHandler} />
-<!-- <TipJar /> -->
-{#key currentRoute}
-	<main
-		class=" ml-12 md:ml-28 p-4 md:p-8 max-w-screen md:max-w-[90vw] mx-auto my-0 relative"
-		in:fade={{ duration: 150, delay: 150 }}
-		out:fade={{ duration: 150 }}
-	>
-		<Loading />
-		<slot />
+<div class:dark>
+	<!-- __layout.svelte -->
+	<Nav {menuHandler} bind:dark />
+	<!-- <TipJar /> -->
+	{#key currentRoute}
+		<main
+			class="text-black dark:text-white bg-white dark:bg-black ml-12 md:ml-28 min-h-screen p-4 md:p-8 max-w-screen md:max-w-[90vw] mx-auto my-0 relative"
+			in:fade={{ duration: 150, delay: 150 }}
+			out:fade={{ duration: 150 }}
+		>
+			<!-- <Canvas /> -->
+			<Loading />
+			<slot />
 
-		<Menu {menuOpen} {menuHandler} />
-		<Footer />
-	</main>
-{/key}
+			<Menu {menuOpen} {menuHandler} />
+			<Footer />
+		</main>
+	{/key}
+</div>
