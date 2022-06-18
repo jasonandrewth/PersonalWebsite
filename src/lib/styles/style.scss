@@ -28,7 +28,7 @@
 
 	body {
 		font-family: 'Arial Narrow', Arial, Helvetica Neue, sans-serif;
-		@apply text-lg md:text-xl overflow-x-hidden scroll-smooth;
+		@apply text-lg md:text-xl overflow-x-hidden scroll-smooth bg-black;
 		scroll-behavior: smooth;
 	}
 

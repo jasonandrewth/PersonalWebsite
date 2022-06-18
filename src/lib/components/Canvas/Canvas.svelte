@@ -11,7 +11,7 @@
 		 * Sizes
 		 */
 		const sizes = {
-			width: canvas.offsetWidth / 2,
+			width: canvas.offsetWidth,
 			height: canvas.offsetHeight
 		};
 
@@ -261,4 +261,4 @@ float snoise(vec3 v)
 	});
 </script>
 
-<div class="absolute top-0 left-0 outline-none w-full h-full" bind:this={canvas} />
+<div class="absolute top-0 left-0 outline-none m-0 w-full h-full" bind:this={canvas} />
