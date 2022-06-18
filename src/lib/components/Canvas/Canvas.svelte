@@ -222,7 +222,7 @@ float snoise(vec3 v)
 
 		const animate = () => {
 			const elapsedTime: number = clock.getElapsedTime();
-			quad.material.uniforms.time.value = (2 * Math.PI * elapsedTime) / 100;
+			quad.material.uniforms.time.value = Math.sin((2 * Math.PI * elapsedTime) / 100);
 			requestAnimationFrame(animate);
 			renderer.render(scene, camera);
 		};
