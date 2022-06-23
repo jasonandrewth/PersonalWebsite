@@ -180,6 +180,7 @@ float snoise(vec3 v)
     vec3 gradient() {
       return mix(orange, yellow, vUv.x + vUv.y);
     }
+
 	
     void main () {
       vec2 p = vUv * scale;
@@ -202,7 +203,10 @@ float snoise(vec3 v)
 
 		const geometry = new THREE.PlaneBufferGeometry(30, 10);
 		//Mesh
-		const quad = new THREE.Mesh(geometry, material);
+		const plane = new THREE.Mesh(geometry, material);
+
+		const quad = new THREE.Mesh(new THREE.PlaneBufferGeometry(2, 2), material);
+
 		quad.position.set(0, 0, 0);
 		// Camera
 		const fov = 45;
@@ -212,9 +216,11 @@ float snoise(vec3 v)
 		const aspect = sizes.width / sizes.height;
 		const near = 1;
 		const far = 100;
-		const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
-		camera.position.set(0, 0, 10);
-		camera.lookAt(quad.position);
+		const camera2 = new THREE.PerspectiveCamera(fov, aspect, near, far);
+
+		const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
+		// camera.position.set(0, 0, 10);
+		// camera.lookAt(quad.position);
 
 		//Add to scene
 		scene.add(quad);
