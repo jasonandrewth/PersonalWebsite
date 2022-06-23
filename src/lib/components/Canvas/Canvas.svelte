@@ -18,7 +18,7 @@
 		const scene = new THREE.Scene();
 		// Change Background Color
 		// scene.background = new THREE.Color(0xff0000);
-		const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
+		// const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
 
 		const material = new THREE.ShaderMaterial({
 			side: THREE.DoubleSide,
@@ -33,7 +33,7 @@
 				density: { value: 6.0 },
 				bg: { value: new THREE.Color('#9ca3af') },
 				yellow: { value: new THREE.Color('#000000') },
-				orange: { value: new THREE.Color('#ff7300') }
+				orange: { value: new THREE.Color('#ff0000') }
 			},
 			//vertex shader
 			vertexShader: /*glsl*/ `
@@ -180,15 +180,6 @@ float snoise(vec3 v)
     vec3 gradient() {
       return mix(orange, yellow, vUv.x + vUv.y);
     }
-    float box(vec2 st, vec2 w){
-      // bottom-left
-      vec2 bl = step(w, st);
-      float pct = bl.x * bl.y;
-      // top-right
-      vec2 tr = step(w, 1.0 - st);
-      pct *= tr.x * tr.y;
-      return pct;
-    }
 	
     void main () {
       vec2 p = vUv * scale;
@@ -199,7 +190,6 @@ float snoise(vec3 v)
       p *= 2.0;
       v /= size;
       float t = patternLine(v);
-      t *= box(vUv, vec2(0.01));
       vec3 fragColor = mix(gradient(), bg, t);
       gl_FragColor = vec4(fragColor, 1.0);
     }
@@ -210,10 +200,24 @@ float snoise(vec3 v)
 		renderer.setSize(sizes.width, sizes.height, true);
 		renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-		const quad = new THREE.Mesh(new THREE.PlaneBufferGeometry(2, 2, 1, 1), material);
-		scene.add(quad);
+		const geometry = new THREE.PlaneBufferGeometry(30, 10);
+		//Mesh
+		const quad = new THREE.Mesh(geometry, material);
+		quad.position.set(0, 0, 0);
+		// Camera
+		const fov = 45;
+		// const fov = (180 * (2 * Math.atan(window.innerHeight / 2 / 800))) / Math.PI
+		//const fov = 2*(180/Math.PI)*Math.atan(heightTool/(2*dist));
+		// const aspect = width / height
+		const aspect = sizes.width / sizes.height;
+		const near = 1;
+		const far = 100;
+		const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
+		camera.position.set(0, 0, 10);
+		camera.lookAt(quad.position);
 
-		scene.add(camera);
+		//Add to scene
+		scene.add(quad);
 
 		/**
 		 * Animate
