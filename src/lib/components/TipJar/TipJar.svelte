@@ -66,7 +66,7 @@
 
 {#if $connected}
 	<div
-		class="overflow-hidden fixed bottom-6 right-6 bg-black text-white border-white shadow-md shadow-red-700 z-[99999999999]"
+		class="overflow-hidden fixed bottom-6 right-6 bg-black text-white border-red-600 dark:border-white shadow-md shadow-red-700 z-[99999999999]"
 	>
 		<form
 			class="p-6 max-w-sm border border-solid grid gap-x-4 gap-y-2 grid-cols-1 items-center"
@@ -76,7 +76,7 @@
 			<div>
 				<label for="amount" class="block text-white"> Tip me I know you're rich </label>
 				<input
-					class="w-full appearance-none text-right p-2 bg-black text-whote border border-solid border-white"
+					class="w-full appearance-none text-right p-2 bg-black text-whote border border-solid border-red-600 dark:border-white"
 					bind:value={amount}
 					id="amount"
 					name="amount"

@@ -10,7 +10,7 @@
 
 <Heading>about</Heading>
 
-<div class="pt-4 md:max-w-[70vw] prose-xl lg:prose-2xl text-white">
+<div class="pt-4 md:max-w-[70vw] prose-xl lg:prose-2xl">
 	<p>
 		As a web developer I create component-driven interfaces. I especially like working on more
 		playful / gamified web experiences that might diverge from tested UX patterns. In a more general
@@ -37,9 +37,3 @@
 		>.
 	</p>
 </div>
-
-<style>
-	strong {
-		@apply text-white;
-	}
-</style>

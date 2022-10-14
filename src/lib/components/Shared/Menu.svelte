@@ -8,8 +8,8 @@
 
 <div
 	class="mobilemenu {menuOpen
-		? 'open'
-		: 'closed'} md:hidden bg-gray-400 fixed top-0 left-0 w-full h-screen z-10 grid place-items-center"
+		? 'left-0'
+		: '-left-full'} md:hidden bg-gray-400 fixed top-0 w-full h-screen z-10 grid place-items-center"
 >
 	<Canvas />
 	<!-- <div class="overlay bg-gray-400 absolute w-full h-full opacity-80" /> -->
@@ -47,13 +47,13 @@
 		transition: all 0.25s linear;
 	}
 
-	.open {
-		left: 0;
-	}
+	// .open {
+	// 	left: 0;
+	// }
 
-	.closed {
-		left: -100%;
-	}
+	// .closed {
+	// 	left: -100%;
+	// }
 
 	.container {
 		width: 100%;

@@ -27,7 +27,9 @@
 
 <ul>
 	{#each posts as post}
-		<li class="first:border-none mb-8 py-4 border-t border-white border-opacity-50">
+		<li
+			class="first:border-none mb-8 py-4 border-t border-white dark:border-black border-opacity-50"
+		>
 			<BlogCard {post} />
 		</li>
 	{/each}

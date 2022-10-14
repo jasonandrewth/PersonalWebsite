@@ -10,17 +10,17 @@
 		class="w-12 md:w-14 m-0 py-7 text-center float-left h-full border-r-2 flex flex-col items-center justify-between"
 	>
 		<!-- DARK MODE TOGGLE  -->
-		<!-- <div>
-			<a
+		<div>
+			<!-- <a
 				href="/"
 				on:click|preventDefault={() => {
 					dark = !dark;
 				}}
 			> -->
-		<!-- <img src="/jason6logo.svg" alt="GitHub Logo" class="max-h-4" /> -->
-		{dark ? '.' : '..'}
-		<!-- </a>
-		</div> -->
+			<!-- <img src="/jason6logo.svg" alt="GitHub Logo" class="max-h-4" /> -->
+			<!-- {dark ? '.' : '..'}
+			</a> -->
+		</div>
 
 		<div
 			on:click={menuHandler}
@@ -44,7 +44,7 @@
 	</div>
 
 	<div
-		class="hidden w-14 m-0 text-center float-left h-screen border-r-2 md:flex flex-col items-center justify-between"
+		class="hidden w-14 m-0 text-center float-left h-screen border-red-600 dark:border-white border-r-2 md:flex flex-col items-center justify-between"
 	>
 		<nav class="absolute bottom-0 pb-4 flex items-center">
 			<ul class="list-none">

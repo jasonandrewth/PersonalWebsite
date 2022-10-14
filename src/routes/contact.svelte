@@ -17,5 +17,5 @@
 			the form.
 		</p>
 	</div>
-	<ContactForm contactPage={false} />
+	<!-- <ContactForm contactPage={false} /> -->
 </section>
