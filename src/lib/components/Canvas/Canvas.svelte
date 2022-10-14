@@ -27,7 +27,7 @@
 				derivatives: true
 			},
 			uniforms: {
-				scale: { value: 0.8 },
+				scale: { value: 0.9 },
 				size: { value: 0.2 },
 				time: { value: 0.0 },
 				density: { value: 6.0 },
@@ -178,7 +178,7 @@ float snoise(vec3 v)
       return ((duration - current) * snoise(vec3(v, current + offset)) + current * snoise(vec3(v, current - duration + offset))) / duration;
     }
     vec3 gradient() {
-      return mix(orange, yellow, vUv.x + vUv.y);
+      return mix(yellow, orange, vUv.x + vUv.y);
     }
 
 	
@@ -186,7 +186,7 @@ float snoise(vec3 v)
       vec2 p = vUv * scale;
       float amp = 0.5;
       float v = 0.0;
-      v += loopNoise(p, time, 1.0, 60.0) * amp;
+      v += loopNoise(p, time, 0.8, 60.0) * amp;
       amp *= 0.5;
       p *= 2.0;
       v /= size;
