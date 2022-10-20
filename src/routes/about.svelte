@@ -44,9 +44,11 @@
 		<Pill>Svelte</Pill>
 		<Pill>THREE.JS</Pill>
 		<Pill>GLSL</Pill>
+		<Pill>Typescript</Pill>
 		<Pill>Node.js</Pill>
 		<Pill>Figma</Pill>
 		<Pill>Arduino</Pill>
+		<Pill>Prisma</Pill>
 		<Pill>Webpack</Pill>
 		<Pill>postgresql</Pill>
 		<Pill>Raspberry Pi</Pill>
