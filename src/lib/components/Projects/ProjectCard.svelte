@@ -47,13 +47,13 @@
 
 				<div class="">
 					<p class="text-xl lg:text-2xl m-0">Role:</p>
-					<div class="flex mt-2 mb-4">
+					<div class="flex gap-2 mt-2 mb-4">
 						{#each roles as role}
 							<Pill>{role}</Pill>
 						{/each}
 					</div>
 					<p class="text-xl lg:text-2xl m-0">Tech:</p>
-					<div class="flex mt-2 mb-4">
+					<div class="flex gap-2 mt-2 mb-4">
 						{#each tech as techOption}
 							<Pill>{techOption}</Pill>
 						{/each}

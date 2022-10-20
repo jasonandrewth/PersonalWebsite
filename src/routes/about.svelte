@@ -1,6 +1,8 @@
 <script lang="ts">
 	import SEO from '$lib/components/SEO/index.svelte';
 	import Heading from '$lib/components/UI/Heading.svelte';
+
+	import Pill from '$lib/components/Projects/components/Pill.svelte';
 </script>
 
 <SEO
@@ -31,9 +33,24 @@
 	<strong>Arduino</strong>
 	platform or <strong>Raspberry Pi</strong>. -->
 	<p>
-		If you would like to work with me in any of these fields feel free to <a
-			class="text-white inline-block"
-			href="/contact">contact me</a
-		>.
+		I'm interested in freelance opportunities and collaborations in almost any field where my skills
+		can be of use. However, if you have other request or questions, contact me via the email
+		provided in the footer.
 	</p>
+
+	<h2 class="mt-0 mb-4 !text-2xl font-medium">Tech I Like To Use:</h2>
+	<div class="w-full flex flex-wrap gap-2 mt-2 mb-4 uppercase font-bold">
+		<Pill>React</Pill>
+		<Pill>Svelte</Pill>
+		<Pill>THREE.JS</Pill>
+		<Pill>GLSL</Pill>
+		<Pill>Node.js</Pill>
+		<Pill>Figma</Pill>
+		<Pill>Arduino</Pill>
+		<Pill>Webpack</Pill>
+		<Pill>postgresql</Pill>
+		<Pill>Raspberry Pi</Pill>
+		<Pill>SymPy</Pill>
+		<Pill>Jupyter notebook</Pill>
+	</div>
 </div>

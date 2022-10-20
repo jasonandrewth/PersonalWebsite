@@ -31,7 +31,7 @@
 			on:click={menuHandler}
 			class="md:hidden p-4 writing-mode-vertical rotate-180 tracking-wide cursor-pointer"
 		>
-			<h3>Menu</h3>
+			<h3 class="font-bold">Menu</h3>
 		</div>
 
 		<div class="flex flex-col p-0 text-red-600 dark:text-white">
@@ -71,13 +71,6 @@
 				>
 					<a href="/about">
 						<h3>ABOUT</h3>
-					</a>
-				</li>
-				<li
-					class="transition-all writing-mode-vertical rotate-180 py-2 max-w-(24px) text-center max-height-(110px) whitespace-nowrap hover:opacity-80"
-				>
-					<a href="/contact">
-						<h3>CONTACT</h3>
 					</a>
 				</li>
 			</ul>

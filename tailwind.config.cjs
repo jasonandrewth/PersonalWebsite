@@ -18,4 +18,5 @@ module.exports = {
     require("@tailwindcss/typography"),
     writingMode
   ],
+  important: true
 }
