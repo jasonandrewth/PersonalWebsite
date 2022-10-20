@@ -1,25 +1,30 @@
 <script lang="ts">
 	import ExternalLink from '../UI/ExternalLink.svelte';
+	import Logo from '../Icons/Logo.svelte';
+	import Twitter from '../Icons/Twitter.svelte';
+	import Github from '../Icons/Github.svelte';
 
 	export let menuHandler: (e: Event) => void;
 	export let dark: boolean;
 </script>
 
-<div class="fixed top-0 left-0 z-20 bottom-0 text-black dark:text-white bg-white dark:bg-black">
+<div class="fixed top-0 left-0 z-20 bottom-0 text-black dark:text-white bg-slate-50 dark:bg-black">
 	<div
-		class="w-12 md:w-14 m-0 py-7 text-center float-left h-full border-r-2 flex flex-col items-center justify-between"
+		class="w-12 md:w-14 m-0 py-7 text-center float-left h-full border-red-600 dark:border-white border-r-2 flex flex-col items-center justify-between"
 	>
 		<!-- DARK MODE TOGGLE  -->
-		<div>
-			<!-- <a
+		<div
+			class="text-red-600 dark:text-white hover:scale-110 lg:transition-transform duration-250 ease-in-out"
+		>
+			<a
 				href="/"
 				on:click|preventDefault={() => {
 					dark = !dark;
 				}}
-			> -->
-			<!-- <img src="/jason6logo.svg" alt="GitHub Logo" class="max-h-4" /> -->
-			<!-- {dark ? '.' : '..'}
-			</a> -->
+			>
+				<!-- <img src="/jason6logo.svg" alt="GitHub Logo" class="w-6 h-6" /> -->
+				<Logo className="w-8 h-8" />
+			</a>
 		</div>
 
 		<div
@@ -29,16 +34,15 @@
 			<h3>Menu</h3>
 		</div>
 
-		<div class="flex flex-col p-0 ">
+		<div class="flex flex-col p-0 text-red-600 dark:text-white">
 			<ExternalLink
-				classes="py-4 hover:opacity-80"
+				classes="py-4 hover:opacity-80 block"
 				ariaLabel="github"
-				href="https://github.com/jasonandrewth"
-				><img src="/github.svg" alt="GitHub Logo" /></ExternalLink
+				href="https://github.com/jasonandrewth"><Github className="w-7 h-7" /></ExternalLink
 			>
 
-			<ExternalLink classes="hover:opacity-80" ariaLabel="twitter" href="https://twitter.com"
-				><img src="/twitter.svg" alt="Twitter Logo" /></ExternalLink
+			<ExternalLink classes="hover:opacity-80 block" ariaLabel="twitter" href="https://twitter.com"
+				><Twitter className="w-7 h-7" /></ExternalLink
 			>
 		</div>
 	</div>

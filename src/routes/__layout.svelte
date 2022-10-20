@@ -53,7 +53,7 @@
 	<!-- <TipJar /> -->
 	{#key currentRoute}
 		<main
-			class="text-black dark:text-white bg-white dark:bg-black ml-12 md:ml-28 min-h-screen p-4 md:p-8 max-w-screen md:max-w-[90vw] mx-auto my-0 relative"
+			class="text-black dark:text-white bg-slate-50 dark:bg-black ml-12 md:ml-28 min-h-screen p-4 md:p-8 max-w-screen md:max-w-[90vw] mx-auto my-0 relative"
 			in:fade={{ duration: 150, delay: 150 }}
 			out:fade={{ duration: 150 }}
 		>
