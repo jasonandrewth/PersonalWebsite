@@ -203,7 +203,6 @@ float snoise(vec3 v)
 
 		const geometry = new THREE.PlaneBufferGeometry(30, 10);
 		//Mesh
-		const plane = new THREE.Mesh(geometry, material);
 
 		const quad = new THREE.Mesh(new THREE.PlaneBufferGeometry(2, 2), material);
 

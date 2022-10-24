@@ -3,7 +3,7 @@
 </script>
 
 <footer
-	class="w-full mt-32 border border-red-600 dark:border-white grid md:grid-rows-2 grid-cols-2 md:grid-cols-6 2xl:grid-cols-8 uppercase text-base font-bold md:text-xl"
+	class="w-full mt-32 border border-red-600 dark:border-white grid md:grid-rows-2 grid-cols-2 md:grid-cols-6 2xl:grid-cols-8 uppercase text-base font-bold md:text-xl transition-all duration-250 ease-in-out"
 >
 	<div
 		class="p-4 md:p-0 border-red-600 dark:border-white border-b border-r flex items-center justify-center md:border-b-0 md:row-span-2"

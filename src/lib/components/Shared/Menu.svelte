@@ -39,7 +39,7 @@
 
 <style lang="scss">
 	.mobilemenu {
-		transition: all 0.25s linear;
+		transition: all 0.25s ease-in-out;
 	}
 
 	// .open {

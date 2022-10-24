@@ -12,7 +12,7 @@
 
 <Heading>about</Heading>
 
-<div class="pt-4 md:max-w-[70vw] prose-xl lg:prose-2xl">
+<div class="pt-4 md:max-w-[70vw] prose-xl lg:prose-2xl ">
 	<p>
 		As a web developer I create component-driven interfaces. I especially like working on more
 		playful / gamified web experiences that might diverge from tested UX patterns. In a more general
@@ -32,11 +32,6 @@
 	the
 	<strong>Arduino</strong>
 	platform or <strong>Raspberry Pi</strong>. -->
-	<p>
-		I'm interested in freelance opportunities and collaborations in almost any field where my skills
-		can be of use. However, if you have other request or questions, contact me via the email
-		provided in the footer.
-	</p>
 
 	<h2 class="mt-0 mb-4 !text-2xl font-medium">Tech I Like To Use:</h2>
 	<div class="w-full flex flex-wrap gap-2 mt-2 mb-4 uppercase font-bold">

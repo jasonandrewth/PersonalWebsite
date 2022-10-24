@@ -8,7 +8,9 @@
 	export let dark: boolean;
 </script>
 
-<div class="fixed top-0 left-0 z-20 bottom-0 text-black dark:text-white bg-slate-50 dark:bg-black">
+<div
+	class="fixed top-0 left-0 z-20 bottom-0 text-black dark:text-white bg-slate-50 dark:bg-black transition-all duration-250 ease-in-out"
+>
 	<div
 		class="w-12 md:w-14 m-0 py-7 text-center float-left h-full border-red-600 dark:border-white border-r-2 flex flex-col items-center justify-between"
 	>
