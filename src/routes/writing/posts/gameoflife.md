@@ -1,5 +1,5 @@
 ---
-title: 'Game Of Life: Three.js Post-Processing'
+title: 'Conways Game Of Life - An introduction to Cellular Automata and Renderbuffers in Three.js'
 date: '2022-11-05'
 published: true
 ---
@@ -10,7 +10,7 @@ published: true
 
 **Cellular Automata**
 
-Conways game of life is what’s called a cellular automaton and the post will start with a more abstract view of what that means. This relates to automata theory in theoretical computer science, but really it’s just about creating some simple rules. A cellular automaton is a model of a system that consists of quite simple automata, called cells, that are interlinked via some logic which allows modelling rather complex behaviour. A cellular automaton is a discrete model, it has a defined starting state and a set of rules, with the following characteristics :
+Conways game of life is what’s called a cellular automaton and the post will start with a more abstract view of what that means. This relates to automata theory in theoretical computer science, but really it’s just about creating some simple rules. A cellular automaton is a model of a system that consists of automata, called cells, that are interlinked via some simple logic which allows modelling rather complex behaviour. A cellular automaton is a discrete model, it has a defined starting state and a set of rules, with the following characteristics :
 
 <ol class="list-disc">
 <li>Cells live on a grid which can be 1D or higher-dimensional (in our example it’s a 2D grid of pixels) </li>
@@ -34,15 +34,15 @@ As already mentioned, the Game of Life is based on a 2D grid. In its initial sta
   <li> Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.</li>
 </ol>
 
-Conway's Game of Life uses a Moore neighbourhood, which is composed of the current cell and the eight cells that surround it, so those are the ones we’ll be looking at in our example. There are many variations and possibilities to this, Life is actually Turing complete, but this post is about implementing it in WebGL with Three.js so it will stick to a rather basic version but feel free to research <ExternalLink ariaLabel="wikilink" href="https://en.wikipedia.org/wiki/Conway's_Game_of_Life">more</ExternalLink>.
+Conway's Game of Life uses a Moore neighbourhood, which is composed of the current cell and the eight cells that surround it, so those are the ones we’ll be looking at in this example. There are many variations and possibilities to this, Life is actually Turing complete, but this post is about implementing it in WebGL with Three.js so it will stick to a rather basic version but feel free to research <ExternalLink ariaLabel="wikilink" href="https://en.wikipedia.org/wiki/Conway's_Game_of_Life">more</ExternalLink>.
 
 **THREE.JS**
 
-Three.js is a pretty high-level WebGL library, but it let's you decide how deep you wanna go. So it provides a lot of options to control the way scenes are structured a rendered and allows users to get close to the WebGL API by writing custom shaders in GLSL and passing <ExternalLink ariaLabel="rendertarget" href="https://threejs.org/docs/#api/en/core/BufferAttributet">Buffer Attributes</ExternalLink>.
+Three.js is a pretty high-level WebGL library, but it let's you decide how deep you wanna go. So it provides a lot of options to control the way scenes are structured and rendered and allows users to get close to the WebGL API by writing custom shaders in GLSL and passing <ExternalLink ariaLabel="rendertarget" href="https://threejs.org/docs/#api/en/core/BufferAttributet">Buffer Attributes</ExternalLink>.
 
 In the game of life each cell needs information about its neighbourhood. But in WebGL all fragments are processed simultaneously by the GPU, so when a fragment shader is in the midst of processing one pixel, there’s no way it can directly access information about any other fragments. But there’s a workaround. In a fragment shader, if we pass a texture, we can easily query the neighbouring pixels in the texture as long as we know its width and height. This idea allows all kinds of post-processing effects to be applied to scenes.
 
-We’ll start with the initial state of the system. In order to get any interesting results, we need non-uniform starting-conditions. In this example we’ll place cells randomly on the screen, so we’ll feed a regular noise texture into our frame buffer for the first frame. Of course we could start with another type of noise but this is the easiest way to get started.
+We’ll start with the initial state of the system. In order to get any interesting results, we need non-uniform starting-conditions. In this example we’ll place cells randomly on the screen, so we’ll feed a regular noise texture into our frame buffer for the first frame. Of course we could initialize with another type of noise but this is the easiest way to get started.
 
 ```js
 /**
@@ -62,6 +62,7 @@ const scene = new THREE.Scene();
 /**
  * Textures
  */
+//The generated noise texture
 const dataTexture = createDataTexture();
 
 /**
@@ -103,7 +104,7 @@ const tick = () => {
 tick();
 ```
 
-This code simply initialises a threejs scene and adds a 2D plane to fill the screen (left out a lot of the Three.js baisc boilerplate stuff). The plane is supplied with a Shader Material that for now does nothing but display a texture in it’s fragment shader. In this code we generate a texture using three.js <ExternalLink ariaLabel="rendertarget" href="https://threejs.org/docs/#api/en/textures/DataTexture">DataTexture</ExternalLink>. It would be possible to load an image too but since the scene will take up the entire screen, creating a texture with the viewport dimensions seems like the simpler solution. Currently the scene will be rendered to the default framebuffer (the device screen).
+This code simply initialises a threejs scene and adds a 2D plane to fill the screen (left out a lot of the Three.js baisc boilerplate stuff). The plane is supplied with a Shader Material, that for now does nothing but display a texture in it’s fragment shader. In this code we generate a texture using three.js <ExternalLink ariaLabel="rendertarget" href="https://threejs.org/docs/#api/en/textures/DataTexture">DataTexture</ExternalLink>. It would be possible to load an image too but since the scene will take up the entire screen, creating a texture with the viewport dimensions seems like the simpler solution. Currently the scene will be rendered to the default framebuffer (the device screen).
 
 <iframe height="300" style="width: 100%;" scrolling="no" title="Game of Life Init Texture" src="https://codepen.io/jasonandrewth/embed/Poaqyjp?default-tab=js%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href="https://codepen.io/jasonandrewth/pen/Poaqyjp">
@@ -114,7 +115,7 @@ This code simply initialises a threejs scene and adds a 2D plane to fill the s
 **Framebuffers**
 
 When writing a WebGL application, whether using the vanilla API or a higher level library like Three.js, after setting up the scene the results are rendered to the default WebGL framebuffer, which is the device screen (as done above).
-But we also have the option to create framebuffers that render off-screen, to image buffers on our GPU’s memory. Those can then be used just like a regular texture for whatever purpose. This idea is used in WebGL when it comes to creating advanced post-processing effects such as depth-of-field, bloom, etc. by applying different effects on the scene once rendered. In Three.js we can do that by using <ExternalLink ariaLabel="rendertarget" href="https://threejs.org/docs/#api/en/renderers/WebGLRenderTarget">THREE.WebGLRenderTarget</ExternalLink>, we’ll call our framebuffer renderBufferA.
+But there's also the option to create framebuffers that render off-screen, to image buffers on the GPU’s memory. Those can then be used just like a regular texture for whatever purpose. This idea is used in WebGL when it comes to creating advanced post-processing effects such as depth-of-field, bloom, etc. by applying different effects on the scene once rendered. In Three.js we can do that by using <ExternalLink ariaLabel="rendertarget" href="https://threejs.org/docs/#api/en/renderers/WebGLRenderTarget">THREE.WebGLRenderTarget</ExternalLink>. We’ll call our framebuffer renderBufferA.
 
 ```js
 /**
@@ -196,7 +197,7 @@ We’ll need to access it as a texture in the animation loop to render the gener
 mesh.material.uniforms.uTexture.value = renderBufferA.texture;
 ```
 
-And that's all it takes to get back the texture, except now it's rendered off-screen and the output of that render is used as a texture in the framebuffer that renders on to the screen.
+And that's all it takes to get back the noise, except now it's rendered off-screen and the output of that render is used as a texture in the framebuffer that renders on to the screen.
 
 <iframe height="300" style="width: 100%;" scrolling="no" title="GOL 3" src="https://codepen.io/jasonandrewth/embed/eYKpagr?default-tab=js%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href="https://codepen.io/jasonandrewth/pen/eYKpagr">
@@ -247,7 +248,7 @@ Now the render buffers are swapped every frame, it’ll look the same but it’s
 
 ### **Game Of Life**
 
-From here it’s about implementing the actual Game of Life, which will all happen in the fragment shader. Since the rules are so simple, the resulting code isn’t very complicated either and there’s many good resources that go through coding it up, (Link art of code stream) so I’ll only go over the key ideas. All the Logic for this will happen in the fragment shader that gets rendered off-screen, which will provide the Texture for the next frame.
+From here it’s about implementing the actual Game of Life. Since the rules are so simple, the resulting code isn’t very complicated either and there’s many good resources that go through coding it up, (Link art of code stream) so I’ll only go over the key ideas. All the Logic for this will happen in the fragment shader that gets rendered off-screen, which will provide the Texture for the next frame.
 
 As described earlier we want to access neighbouring fragments (or pixels) via the texture that’s passed in. This is achieved in a nested for loop in the getNeighbours function. We skip our current cell and check the 8 surrounding pixels by sampling the texture at an offset. Then we check whether the pixels r value is above 0.5, which means it’s alive, and increment the count to represent the alive neighbours.
 

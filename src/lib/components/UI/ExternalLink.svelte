@@ -3,7 +3,7 @@
 	export let target = '_blank';
 	export let href: string;
 	export let ariaLabel;
-	export let classes = 'italic hover:text-red-600';
+	export let classes = 'italic text-red-600 hover:opacity-80';
 </script>
 
 <a class={classes} aria-label={ariaLabel} {href} {rel} {target}><slot /></a>
