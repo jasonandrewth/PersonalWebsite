@@ -16,7 +16,7 @@
 		<p class="text-xl text-red text-center italic">Published: {dater}</p>
 	</header>
 
-	<section class="prose-xl lg:prose-2xl text-white">
+	<section class="prose-xl lg:prose-2xl text-black dark:text-white">
 		<slot />
 	</section>
 </article>
