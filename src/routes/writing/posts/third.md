@@ -1,6 +1,6 @@
 ---
 title: Post three
-date: "2021-12-28"
+date: '2021-12-28'
 published: false
 ---
 
@@ -12,10 +12,10 @@ Hello, I am _Post 2._
 
 ```json
 {
-  "email": "spences10apps+test@gmail.com",
-  "first_name": "",
-  "last_name": "",
-  "double_opt_in": false
+	"email": "spences10apps+test@gmail.com",
+	"first_name": "",
+	"last_name": "",
+	"double_opt_in": false
 }
 ```
 

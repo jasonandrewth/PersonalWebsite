@@ -65,3 +65,19 @@ a {
 	margin-left: 7rem;
 	max-width: calc(100vw - 7rem) !important;
 }
+
+
+
+.prose-xl {
+	pre {
+		@apply text-xs lg:text-base
+	}
+
+	strong {
+		@apply text-red-600
+	}
+
+	ol, ul {
+		@apply list-disc
+	}
+}

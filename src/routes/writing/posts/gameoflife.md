@@ -1,16 +1,25 @@
 ---
-title: 'Conways Game Of Life - An introduction to Cellular Automata and Renderbuffers in Three.js'
+title: 'Conways Game Of Life - Intro to Cellular Automata and Renderbuffers in Three.js'
 date: '2022-11-05'
 published: true
 ---
 
 <script>
   import ExternalLink from '$lib/components/UI/ExternalLink.svelte'
+  //Assets
+  import gif from '../assets/gol.gif';
+  import neighbourhood from '../assets/neighbourhood.png';
 </script>
+
+<img class="mx-auto" alt="Game of Life GIF" src={gif} />
+
+Simple rules can produce structured, complex systems. And beautiful images often follow. This is the core idea behind the Game of Life, a cellular automaton devised by british mathematician John Horton Conway in 1970. Often called just 'Life', it's probably one of the most popular and well known examples of cellular automata. There are many examples and tutorials on the web that go over implementing it, like this one by <ExternalLink ariaLabel="codingtrain" href="https://www.youtube.com/watch?v=FWSR_7kZuYg"> Daniel Shiffman. </ExternalLink>
+
+But in many of these examples this computation runs on the CPU, limiting the possible complexity and amount of cells in the system. So this article will go over implemeting the Game of Life in WebGL which allows GPU-accelerated computations (= way more complex and detailed images). Writing WebGL on it's own can be very painful so it's going to be implemented using <ExternalLink ariaLabel="codingtrain" href="https://threejs.org/"> Three.js</ExternalLink>, a WebGL graphics library. This going to require some advanced rendering techniques, so some basic familiarity with Three.js and GLSL would be helpful in order to follow along.
 
 **Cellular Automata**
 
-Conways game of life is what’s called a cellular automaton and the post will start with a more abstract view of what that means. This relates to automata theory in theoretical computer science, but really it’s just about creating some simple rules. A cellular automaton is a model of a system that consists of automata, called cells, that are interlinked via some simple logic which allows modelling rather complex behaviour. A cellular automaton is a discrete model, it has a defined starting state and a set of rules, with the following characteristics :
+Conways game of life is what’s called a cellular automaton and it makes sense to consider a more abstract view of what that means. This relates to automata theory in theoretical computer science, but really it’s just about creating some simple rules. A cellular automaton is a model of a system that consists of automata, called cells, that are interlinked via some simple logic which allows modelling rather complex behaviour. A cellular automaton is a discrete model, it has a defined starting state and a set of rules, with the following characteristics
 
 <ol class="list-disc">
 <li>Cells live on a grid which can be 1D or higher-dimensional (in our example it’s a 2D grid of pixels) </li>
@@ -20,19 +29,19 @@ Conways game of life is what’s called a cellular automaton and the post will s
 
 The basic working principle of a cellular automaton usually involves the following steps:
 
-1. An initial (global) state is selected by assigning a state for each cell.
-2. A new generation is created, according to some fixed rule that determines the new state of each cell in terms of:
-3. 1. The current state of the cell
-4. 2. The states of cells in its neighbourhood
+- An initial (global) state is selected by assigning a state for each cell.
+- A new generation is created, according to some fixed rule that determines the new state of each cell in terms of:
+  - The current state of the cell
+  - The states of cells in its neighbourhood
+
+<img class="mx-auto" alt="Cellular Automaton Neighbourhood" src={neighbourhood} />
 
 As already mentioned, the Game of Life is based on a 2D grid. In its initial state there are cells which are either alive or dead. We generate the next generation of cells according to only these rules.
 
-<ol class="list-disc"> 
-  <li> Any live cell with fewer than two live neighbours dies as if caused by underpopulation.</li>
-  <li> Any live cell with two or three live neighbours lives on to the next generation.</li>
-  <li> Any live cell with more than three live neighbours dies, as if by overpopulation.</li>
-  <li> Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.</li>
-</ol>
+- Any live cell with fewer than two live neighbours dies as if caused by underpopulation.
+- Any live cell with two or three live neighbours lives on to the next generation.
+- Any live cell with more than three live neighbours dies, as if by overpopulation.
+- Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.
 
 Conway's Game of Life uses a Moore neighbourhood, which is composed of the current cell and the eight cells that surround it, so those are the ones we’ll be looking at in this example. There are many variations and possibilities to this, Life is actually Turing complete, but this post is about implementing it in WebGL with Three.js so it will stick to a rather basic version but feel free to research <ExternalLink ariaLabel="wikilink" href="https://en.wikipedia.org/wiki/Conway's_Game_of_Life">more</ExternalLink>.
 
@@ -245,6 +254,8 @@ Now the render buffers are swapped every frame, it’ll look the same but it’s
   GOL fourth</a> by Jason6 (<a href="https://codepen.io/jasonandrewth">@jasonandrewth</a>)
   on <a href="https://codepen.io">CodePen</a>.
 </iframe>
+
+<ExternalLink ariaLabel="pinpongdetails" href="https://en.wikipedia.org/wiki/Conway's_Game_of_Life](https://webglfundamentals.org/webgl/lessons/webgl-image-processing-continued.html">Here's a more in depth look at ping pong buffers in WebGL.</ExternalLink>
 
 ### **Game Of Life**
 
